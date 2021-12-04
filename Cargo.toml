@@ -6,6 +6,7 @@ edition = "2021"
 default-run = "all"
 
 [dependencies]
+itertools = "0.10"
 
 [profile.release]
 lto = true
