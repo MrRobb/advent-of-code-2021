@@ -1,6 +1,6 @@
 use std::fs::read_to_string;
 
-fn calculate_depth_and_position(input: &str) -> usize {
+pub fn calculate_depth_and_position(input: &str) -> usize {
     let mut depth = 0;
     let mut position = 0;
     for line in input.lines() {

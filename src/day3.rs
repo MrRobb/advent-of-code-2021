@@ -2,7 +2,7 @@ use std::fs::read_to_string;
 
 const DIGITS: usize = 12;
 
-fn calculate_power_consumption(input: &str) -> usize {
+pub fn calculate_power_consumption(input: &str) -> usize {
     
     let mut counts: Vec<i64> = vec![0; DIGITS];
 
@@ -56,7 +56,7 @@ fn get_prefix(input: &str, f: fn(usize, usize) -> bool) -> usize {
     usize::from_str_radix(&filtered[0], 2).unwrap()
 }
 
-fn filter_power_consumption(input: &str) -> usize {
+pub fn filter_power_consumption(input: &str) -> usize {
     let oxygen = get_prefix(input, |count1, count0| count1 >= count0);
     let co2 = get_prefix(input, |count1, count0| count1 < count0);
     oxygen * co2

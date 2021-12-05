@@ -1,7 +1,7 @@
 use itertools::Itertools;
 use std::fs::read_to_string;
 
-fn calculate_increases(input: &str) -> usize {
+pub fn calculate_increases(input: &str) -> usize {
     input
         .lines()
         .flat_map(str::parse::<u64>)
@@ -10,7 +10,7 @@ fn calculate_increases(input: &str) -> usize {
         .count()
 }
 
-fn calculate_increases_sliding_window(input: &str) -> usize {
+pub fn calculate_increases_sliding_window(input: &str) -> usize {
     input
         .lines()
         .flat_map(str::parse::<u64>)

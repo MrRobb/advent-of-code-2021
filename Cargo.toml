@@ -8,6 +8,13 @@ default-run = "all"
 [dependencies]
 itertools = "0.10"
 
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "benches"
+harness = false
+
 [profile.release]
 lto = true
 
