@@ -4,10 +4,10 @@
 
 |       | Problem                                          | Solution                                                                              | Execution time    | Finished |
 |-------|--------------------------------------------------|---------------------------------------------------------------------------------------|-------------------|----------|
-| Day 1 | [Problem 1](https://adventofcode.com/2021/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day1.rs) | ???   | ✗        |
-| Day 2 | [Problem 2](https://adventofcode.com/2021/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day2.rs) | ???   | ✗        |
-| Day 3 | [Problem 3](https://adventofcode.com/2021/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day3.rs) | ???   | ✗        |
-| Day 4 | [Problem 4](https://adventofcode.com/2021/day/4) | [day4.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day4.rs) | ???   | ✗        |
+| Day 1 | [Problem 1](https://adventofcode.com/2021/day/1) | [day1.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day1.rs) | 31.386 μs + 30.812 μs   | ✓        |
+| Day 2 | [Problem 2](https://adventofcode.com/2021/day/2) | [day2.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day2.rs) | 26.439 μs + 26.810 μs   | ✓        |
+| Day 3 | [Problem 3](https://adventofcode.com/2021/day/3) | [day3.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day3.rs) | 56.353 μs + 376.39 μs  | ✓        |
+| Day 4 | [Problem 4](https://adventofcode.com/2021/day/4) | [day4.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day4.rs) |    | ✗        |
 
 ## Install Rust
 
