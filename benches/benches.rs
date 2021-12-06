@@ -23,7 +23,7 @@ fn bench1(c: &mut Criterion) {
 	c.bench_function("Day 2 | Part 2", |b| b.iter(|| calculate_depth_position_aim(&input2)));
 
 	c.bench_function("Day 3 | Part 1", |b| b.iter(|| calculate_power_consumption(&input3)));
-	c.bench_function("Day 3 | Part 2", |b| b.iter(|| filter_power_consumption(&input3)));
+	c.bench_function("Day 3 | Part 2", |b| b.iter(|| calculate_oxygen_co2(&input3)));
 
 	c.bench_function("Day 4 | Part 1", |b| b.iter(|| calculate_first_winner(&input4)));
 	c.bench_function("Day 4 | Part 2", |b| b.iter(|| calculate_last_winner(&input4)));
