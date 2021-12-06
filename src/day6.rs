@@ -8,7 +8,7 @@ pub fn calculate_lanternfishes(input: &str, days: usize) -> usize {
 			acc[n] += 1;
 			acc
 		});
-	
+
 	for _ in 0..days {
 		let mut aux = [0; 9];
 		aux[0] = lanternfishes[1];

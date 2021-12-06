@@ -54,7 +54,7 @@ fn get_prefix(input: &str, f: fn(usize, usize) -> bool) -> usize {
 	usize::from_str_radix(&filtered[0], 2).unwrap()
 }
 
-pub fn filter_power_consumption(input: &str) -> usize {
+pub fn calculate_oxygen_co2(input: &str) -> usize {
 	let oxygen = get_prefix(input, |count1, count0| count1 >= count0);
 	let co2 = get_prefix(input, |count1, count0| count1 < count0);
 	oxygen * co2
@@ -64,6 +64,6 @@ pub fn main() {
 	let input = read_to_string("input/day3/input.txt").expect("Input file not found");
 	let now = std::time::Instant::now();
 	println!("PART 1 = {}", calculate_power_consumption(&input));
-	println!("PART 2 = {}", filter_power_consumption(&input));
+	println!("PART 2 = {}", calculate_oxygen_co2(&input));
 	println!("Execution time: {:?}", now.elapsed())
 }
