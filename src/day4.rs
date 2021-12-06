@@ -30,7 +30,6 @@ impl Bingo {
 		Bingo { numbers }
 	}
 
-	/// Drawn a new number
 	fn drawn_number(&mut self, drawned_number: u32) {
 		for n in &mut self.numbers {
 			if n.number == drawned_number {
