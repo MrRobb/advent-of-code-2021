@@ -11,7 +11,7 @@ pub fn calculate_increases(input: &str) -> usize {
 		.count()
 }
 
-pub fn calculate_increases_sliding_window(input: &str) -> usize {
+pub fn calculate_with_sliding_window(input: &str) -> usize {
 	input
 		.lines()
 		.flat_map(str::parse::<u64>)
@@ -22,6 +22,8 @@ pub fn calculate_increases_sliding_window(input: &str) -> usize {
 
 pub fn main() {
 	let input = read_to_string("input/day1/input.txt").expect("Input file not found");
+	let now = std::time::Instant::now();
 	println!("PART 1 = {}", calculate_increases(&input));
-	println!("PART 2 = {}", calculate_increases_sliding_window(&input));
+	println!("PART 2 = {}", calculate_with_sliding_window(&input));
+	println!("Execution time: {:?}", now.elapsed())
 }
