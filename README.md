@@ -51,7 +51,7 @@ cd advent-of-code-2021
 ### Build
 
 ```sh
-cargo build
+cargo build --release
 ```
 
 ### Run
@@ -59,11 +59,11 @@ cargo build
 #### Run all
 
 ```sh
-cargo run
+cargo run --release
 ```
 
 #### Run a specific day
 
 ```sh
-cargo run --bin day1
+cargo run --release --bin day1
 ```
