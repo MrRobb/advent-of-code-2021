@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
+
 use std::fs::read_to_string;
 
 pub fn calculate_depth_position(input: &str) -> usize {
@@ -39,5 +41,5 @@ pub fn main() {
 	let now = std::time::Instant::now();
 	println!("PART 1 = {}", calculate_depth_position(&input));
 	println!("PART 2 = {}", calculate_depth_position_aim(&input));
-	println!("Execution time: {:?}", now.elapsed())
+	println!("Execution time: {:?}", now.elapsed());
 }

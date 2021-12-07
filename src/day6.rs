@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
+
 use std::fs::read_to_string;
 
 pub fn calculate_lanternfishes(input: &str, days: usize) -> usize {
@@ -31,5 +33,5 @@ pub fn main() {
 	let now = std::time::Instant::now();
 	println!("PART 1 = {}", calculate_lanternfishes(&input, 80));
 	println!("PART 2 = {}", calculate_lanternfishes(&input, 256));
-	println!("Execution time: {:?}", now.elapsed())
+	println!("Execution time: {:?}", now.elapsed());
 }

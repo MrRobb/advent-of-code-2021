@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
+
 use std::fs::read_to_string;
 
 use itertools::Itertools;
@@ -25,5 +27,5 @@ pub fn main() {
 	let now = std::time::Instant::now();
 	println!("PART 1 = {}", calculate_increases(&input));
 	println!("PART 2 = {}", calculate_with_sliding_window(&input));
-	println!("Execution time: {:?}", now.elapsed())
+	println!("Execution time: {:?}", now.elapsed());
 }

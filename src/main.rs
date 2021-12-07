@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
+
 use advent_of_code_2021::{day1, day2, day3, day4, day5, day6};
 
 fn main() {

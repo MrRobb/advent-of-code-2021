@@ -1,3 +1,5 @@
+#![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
+
 use std::fs::read_to_string;
 
 use itertools::Itertools;
@@ -15,19 +17,18 @@ struct Bingo {
 }
 
 impl Bingo {
-	fn new(chunks: Vec<&str>) -> Bingo {
+	fn new(chunks: &[&str]) -> Self {
 		let numbers: Vec<Number> = chunks
 			.iter()
-			.map(|chunk| {
+			.flat_map(|chunk| {
 				chunk.split_whitespace().map(|num| Number {
 					number: num.parse().unwrap(),
 					drawned: false,
 				})
 			})
-			.flatten()
 			.collect();
 
-		Bingo { numbers }
+		Self { numbers }
 	}
 
 	fn drawn_number(&mut self, drawned_number: u32) {
@@ -57,22 +58,15 @@ impl Bingo {
 
 pub fn calculate_first_winner(input: &str) -> u32 {
 	let mut lines = input.lines();
-	let numbers = lines
-		.next()
-		.unwrap()
-		.to_string()
-		.split(',')
-		.map(|s| s.parse().unwrap())
-		.collect::<Vec<u32>>();
+	let mut numbers = lines.next().unwrap().split(',').map(|s| s.parse().unwrap());
 
 	let mut bingos = Vec::new();
-	for chunk in &lines.filter(|&l| l != "").chunks(WIDTH) {
-		bingos.push(Bingo::new(chunk.collect()));
+	for chunk in &lines.filter(|&l| !l.is_empty()).chunks(WIDTH) {
+		bingos.push(Bingo::new(&chunk.collect::<Vec<_>>()));
 	}
 
 	numbers
-		.into_iter()
-		.flat_map(|number| {
+		.find_map(|number| {
 			bingos
 				.iter_mut()
 				.map(|bingo| {
@@ -83,28 +77,20 @@ pub fn calculate_first_winner(input: &str) -> u32 {
 				.map(|winner_b| winner_b.sum_unmarked() * number)
 				.next()
 		})
-		.next()
 		.unwrap()
 }
 
 pub fn calculate_last_winner(input: &str) -> u32 {
 	let mut lines = input.lines();
-	let numbers = lines
-		.next()
-		.unwrap()
-		.to_string()
-		.split(',')
-		.map(|s| s.parse().unwrap())
-		.collect::<Vec<u32>>();
+	let numbers = lines.next().unwrap().split(',').map(|s| s.parse().unwrap());
 
 	let mut bingos = Vec::new();
-	for chunk in &lines.filter(|&l| l != "").chunks(WIDTH) {
-		bingos.push(Bingo::new(chunk.collect()));
+	for chunk in &lines.filter(|&l| !l.is_empty()).chunks(WIDTH) {
+		bingos.push(Bingo::new(&chunk.collect::<Vec<_>>()));
 	}
 
 	numbers
-		.into_iter()
-		.flat_map(|number| {
+		.filter_map(|number| {
 			bingos
 				.iter_mut()
 				.filter(|b| !b.is_winner())

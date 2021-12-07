@@ -3,7 +3,8 @@ name = "advent-of-code-2021"
 version = "0.1.0"
 authors = ["Roberto <rob.ariosa@hotmail.com>"]
 edition = "2021"
-default-run = "all"
+rust-version = "1.56"
+default-run = "advent-of-code-2021"
 
 [dependencies]
 itertools = "0.10"
@@ -18,10 +19,6 @@ harness = false
 
 [profile.release]
 lto = true
-
-[[bin]]
-name = "all"
-path = "src/all.rs"
 
 [[bin]]
 name = "day1"
