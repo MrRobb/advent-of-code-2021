@@ -35,5 +35,11 @@ fn bench1(c: &mut Criterion) {
 	c.bench_function("Day 6 | Part 2", |b| b.iter(|| calculate_lanternfishes(&input6, 256)));
 }
 
+// fn bench2(c: &mut Criterion) {
+// 	let input = read_to_string("input/day/input.txt").expect("Input file not found");
+// 	c.bench_function("Testing function 1", |b| b.iter(|| function1(&input)));
+// 	c.bench_function("Testing function 2", |b| b.iter(|| function2(&input)));
+// }
+
 criterion_group!(benches, bench1);
 criterion_main!(benches);
