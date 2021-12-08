@@ -2,7 +2,8 @@
 	clippy::must_use_candidate,
 	clippy::missing_panics_doc,
 	clippy::cast_possible_truncation,
-	clippy::cast_sign_loss
+	clippy::cast_sign_loss,
+	clippy::cast_precision_loss
 )]
 
 use std::fs::read_to_string;
