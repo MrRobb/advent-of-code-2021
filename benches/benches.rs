@@ -7,7 +7,7 @@ use advent_of_code_2021::day4::{calculate_first_winner, calculate_last_winner};
 use advent_of_code_2021::day5::{calculate_all_lines, calculate_horizontal_vertical};
 use advent_of_code_2021::day6::calculate_lanternfishes;
 use advent_of_code_2021::day7::{calculate_fuel, calculate_fuel_advanced};
-use advent_of_code_2021::day8::{calculate_output, calculate_1478};
+use advent_of_code_2021::day8::{calculate_1478, calculate_output};
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn bench1(c: &mut Criterion) {
