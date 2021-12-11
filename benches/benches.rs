@@ -1,6 +1,8 @@
 use std::fs::read_to_string;
 
 use advent_of_code_2021::day1::{calculate_increases, calculate_with_sliding_window};
+use advent_of_code_2021::day10::{calculate_incomplete, calculate_incorrect};
+use advent_of_code_2021::day11::{calculate_flashes, calculate_simulatenous_flash};
 use advent_of_code_2021::day2::{calculate_depth_position, calculate_depth_position_aim};
 use advent_of_code_2021::day3::{calculate_oxygen_co2, calculate_power_consumption};
 use advent_of_code_2021::day4::{calculate_first_winner, calculate_last_winner};
@@ -8,6 +10,7 @@ use advent_of_code_2021::day5::{calculate_all_lines, calculate_horizontal_vertic
 use advent_of_code_2021::day6::calculate_lanternfishes;
 use advent_of_code_2021::day7::{calculate_fuel, calculate_fuel_advanced};
 use advent_of_code_2021::day8::{calculate_1478, calculate_output};
+use advent_of_code_2021::day9::{calculate_basins, calculate_low_points};
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn bench1(c: &mut Criterion) {
@@ -19,6 +22,9 @@ fn bench1(c: &mut Criterion) {
 	let input6 = read_to_string("input/day6/input.txt").expect("Input file not found");
 	let input7 = read_to_string("input/day7/input.txt").expect("Input file not found");
 	let input8 = read_to_string("input/day8/input.txt").expect("Input file not found");
+	let input9 = read_to_string("input/day9/input.txt").expect("Input file not found");
+	let input10 = read_to_string("input/day10/input.txt").expect("Input file not found");
+	let input11 = read_to_string("input/day11/input.txt").expect("Input file not found");
 
 	c.bench_function("Day 1 | Part 1", |b| b.iter(|| calculate_increases(&input1)));
 	c.bench_function("Day 1 | Part 2", |b| b.iter(|| calculate_with_sliding_window(&input1)));
@@ -43,6 +49,15 @@ fn bench1(c: &mut Criterion) {
 
 	c.bench_function("Day 8 | Part 1", |b| b.iter(|| calculate_1478(&input8)));
 	c.bench_function("Day 8 | Part 2", |b| b.iter(|| calculate_output(&input8)));
+
+	c.bench_function("Day 9 | Part 1", |b| b.iter(|| calculate_low_points(&input9)));
+	c.bench_function("Day 9 | Part 2", |b| b.iter(|| calculate_basins(&input9)));
+
+	c.bench_function("Day 10 | Part 1", |b| b.iter(|| calculate_incorrect(&input10)));
+	c.bench_function("Day 10 | Part 2", |b| b.iter(|| calculate_incomplete(&input10)));
+
+	c.bench_function("Day 11 | Part 1", |b| b.iter(|| calculate_flashes(&input11)));
+	c.bench_function("Day 11 | Part 2", |b| b.iter(|| calculate_simulatenous_flash(&input11)));
 }
 
 // fn bench2(c: &mut Criterion) {
