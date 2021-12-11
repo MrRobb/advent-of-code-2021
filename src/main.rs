@@ -1,6 +1,6 @@
 #![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
 
-use advent_of_code_2021::{day1, day2, day3, day4, day5, day6, day7, day8, day9, day10};
+use advent_of_code_2021::{day1, day10, day2, day3, day4, day5, day6, day7, day8, day9, day11};
 
 fn main() {
 	let mains = [
