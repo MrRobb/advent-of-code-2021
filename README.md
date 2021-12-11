@@ -12,8 +12,8 @@
 | Day 6  | [Problem 6](https://adventofcode.com/2021/day/6) | [day6.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day6.rs) | 2.7375 μs + 2.8628 μs | ✓        |
 | Day 7  | [Problem 7](https://adventofcode.com/2021/day/7) | [day7.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day7.rs) | 23.143 μs + 15.143 μs | ✓        |
 | Day 8  | [Problem 8](https://adventofcode.com/2021/day/8) | [day8.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day8.rs) | 15.555 μs + 21.479 ms | ✓        |
-| Day 9  |                                                  |                                                                                |                       |          |
-| Day 10 |                                                  |                                                                                |                       |          |
+| Day 9  | [Problem 9](https://adventofcode.com/2021/day/9) | [day9.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day9.rs) |                       | ✓        |
+| Day 10 | [Problem 10](https://adventofcode.com/2021/day/10) | [day10.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day10.rs) |                       | ✓        |
 | Day 11 |                                                  |                                                                                |                       |          |
 | Day 12 |                                                  |                                                                                |                       |          |
 | Day 13 |                                                  |                                                                                |                       |          |
