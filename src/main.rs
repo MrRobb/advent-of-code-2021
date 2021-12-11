@@ -17,6 +17,8 @@ fn main() {
 		day11::main,
 	];
 
+	let now = std::time::Instant::now();
+
 	for (day, main) in mains.iter().enumerate() {
 		println!(
 			"------------------------------------ DAY {} ------------------------------------",
@@ -25,4 +27,7 @@ fn main() {
 		main();
 		println!();
 	}
+
+	println!("------------------------------------  ALL   ------------------------------------");
+	println!("Execution time: {:?}\n", now.elapsed());
 }
