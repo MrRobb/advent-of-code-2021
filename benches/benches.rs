@@ -3,6 +3,7 @@ use std::fs::read_to_string;
 use advent_of_code_2021::day1::{calculate_increases, calculate_with_sliding_window};
 use advent_of_code_2021::day10::{calculate_incomplete, calculate_incorrect};
 use advent_of_code_2021::day11::{calculate_flashes, calculate_simulatenous_flash};
+use advent_of_code_2021::day12::{calculate_paths, calculate_paths_repeating};
 use advent_of_code_2021::day2::{calculate_depth_position, calculate_depth_position_aim};
 use advent_of_code_2021::day3::{calculate_oxygen_co2, calculate_power_consumption};
 use advent_of_code_2021::day4::{calculate_first_winner, calculate_last_winner};
@@ -14,56 +15,61 @@ use advent_of_code_2021::day9::{calculate_basins, calculate_low_points};
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn bench1(c: &mut Criterion) {
-	let input1 = read_to_string("input/day1/input.txt").expect("Input file not found");
-	let input2 = read_to_string("input/day2/input.txt").expect("Input file not found");
-	let input3 = read_to_string("input/day3/input.txt").expect("Input file not found");
-	let input4 = read_to_string("input/day4/input.txt").expect("Input file not found");
-	let input5 = read_to_string("input/day5/input.txt").expect("Input file not found");
-	let input6 = read_to_string("input/day6/input.txt").expect("Input file not found");
-	let input7 = read_to_string("input/day7/input.txt").expect("Input file not found");
-	let input8 = read_to_string("input/day8/input.txt").expect("Input file not found");
-	let input9 = read_to_string("input/day9/input.txt").expect("Input file not found");
+	let input01 = read_to_string("input/day1/input.txt").expect("Input file not found");
+	let input02 = read_to_string("input/day2/input.txt").expect("Input file not found");
+	let input03 = read_to_string("input/day3/input.txt").expect("Input file not found");
+	let input04 = read_to_string("input/day4/input.txt").expect("Input file not found");
+	let input05 = read_to_string("input/day5/input.txt").expect("Input file not found");
+	let input06 = read_to_string("input/day6/input.txt").expect("Input file not found");
+	let input07 = read_to_string("input/day7/input.txt").expect("Input file not found");
+	let input08 = read_to_string("input/day8/input.txt").expect("Input file not found");
+	let input09 = read_to_string("input/day9/input.txt").expect("Input file not found");
 	let input10 = read_to_string("input/day10/input.txt").expect("Input file not found");
 	let input11 = read_to_string("input/day11/input.txt").expect("Input file not found");
+	let input12 = read_to_string("input/day12/input.txt").expect("Input file not found");
 
-	c.bench_function("Day 1 | Part 1", |b| b.iter(|| calculate_increases(&input1)));
-	c.bench_function("Day 1 | Part 2", |b| b.iter(|| calculate_with_sliding_window(&input1)));
+	c.bench_function("Day 1 | Part 1", |b| b.iter(|| calculate_increases(&input01)));
+	c.bench_function("Day 1 | Part 2", |b| b.iter(|| calculate_with_sliding_window(&input01)));
 
-	c.bench_function("Day 2 | Part 1", |b| b.iter(|| calculate_depth_position(&input2)));
-	c.bench_function("Day 2 | Part 2", |b| b.iter(|| calculate_depth_position_aim(&input2)));
+	c.bench_function("Day 2 | Part 1", |b| b.iter(|| calculate_depth_position(&input02)));
+	c.bench_function("Day 2 | Part 2", |b| b.iter(|| calculate_depth_position_aim(&input02)));
 
-	c.bench_function("Day 3 | Part 1", |b| b.iter(|| calculate_power_consumption(&input3)));
-	c.bench_function("Day 3 | Part 2", |b| b.iter(|| calculate_oxygen_co2(&input3)));
+	c.bench_function("Day 3 | Part 1", |b| b.iter(|| calculate_power_consumption(&input03)));
+	c.bench_function("Day 3 | Part 2", |b| b.iter(|| calculate_oxygen_co2(&input03)));
 
-	c.bench_function("Day 4 | Part 1", |b| b.iter(|| calculate_first_winner(&input4)));
-	c.bench_function("Day 4 | Part 2", |b| b.iter(|| calculate_last_winner(&input4)));
+	c.bench_function("Day 4 | Part 1", |b| b.iter(|| calculate_first_winner(&input04)));
+	c.bench_function("Day 4 | Part 2", |b| b.iter(|| calculate_last_winner(&input04)));
 
-	c.bench_function("Day 5 | Part 1", |b| b.iter(|| calculate_horizontal_vertical(&input5)));
-	c.bench_function("Day 5 | Part 2", |b| b.iter(|| calculate_all_lines(&input5)));
+	c.bench_function("Day 5 | Part 1", |b| b.iter(|| calculate_horizontal_vertical(&input05)));
+	c.bench_function("Day 5 | Part 2", |b| b.iter(|| calculate_all_lines(&input05)));
 
-	c.bench_function("Day 6 | Part 1", |b| b.iter(|| calculate_lanternfishes(&input6, 80)));
-	c.bench_function("Day 6 | Part 2", |b| b.iter(|| calculate_lanternfishes(&input6, 256)));
+	c.bench_function("Day 6 | Part 1", |b| b.iter(|| calculate_lanternfishes(&input06, 80)));
+	c.bench_function("Day 6 | Part 2", |b| b.iter(|| calculate_lanternfishes(&input06, 256)));
 
-	c.bench_function("Day 7 | Part 1", |b| b.iter(|| calculate_fuel(&input7)));
-	c.bench_function("Day 7 | Part 2", |b| b.iter(|| calculate_fuel_advanced(&input7)));
+	c.bench_function("Day 7 | Part 1", |b| b.iter(|| calculate_fuel(&input07)));
+	c.bench_function("Day 7 | Part 2", |b| b.iter(|| calculate_fuel_advanced(&input07)));
 
-	c.bench_function("Day 8 | Part 1", |b| b.iter(|| calculate_1478(&input8)));
-	c.bench_function("Day 8 | Part 2", |b| b.iter(|| calculate_output(&input8)));
+	c.bench_function("Day 8 | Part 1", |b| b.iter(|| calculate_1478(&input08)));
+	c.bench_function("Day 8 | Part 2", |b| b.iter(|| calculate_output(&input08)));
 
-	c.bench_function("Day 9 | Part 1", |b| b.iter(|| calculate_low_points(&input9)));
-	c.bench_function("Day 9 | Part 2", |b| b.iter(|| calculate_basins(&input9)));
+	c.bench_function("Day 9 | Part 1", |b| b.iter(|| calculate_low_points(&input09)));
+	c.bench_function("Day 9 | Part 2", |b| b.iter(|| calculate_basins(&input09)));
 
 	c.bench_function("Day 10 | Part 1", |b| b.iter(|| calculate_incorrect(&input10)));
 	c.bench_function("Day 10 | Part 2", |b| b.iter(|| calculate_incomplete(&input10)));
 
 	c.bench_function("Day 11 | Part 1", |b| b.iter(|| calculate_flashes(&input11)));
 	c.bench_function("Day 11 | Part 2", |b| b.iter(|| calculate_simulatenous_flash(&input11)));
+
+	c.bench_function("Day 12 | Part 1", |b| b.iter(|| calculate_paths(&input12)));
+	c.bench_function("Day 12 | Part 2", |b| b.iter(|| calculate_paths_repeating(&input12)));
 }
 
 // fn bench2(c: &mut Criterion) {
-// 	let input = read_to_string("input/day/input.txt").expect("Input file not found");
-// 	c.bench_function("Testing function 1", |b| b.iter(|| function1(&input)));
-// 	c.bench_function("Testing function 2", |b| b.iter(|| function2(&input)));
+// 	let input = read_to_string("input/day12/input.txt").expect("Input file not found");
+// 	c.bench_function("Testing function 1", |b| {
+// 		b.iter(|| calculate_paths_repeating(&input));
+// 	});
 // }
 
 criterion_group!(benches, bench1);
