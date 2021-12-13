@@ -21,6 +21,7 @@ harness = false
 
 [profile.release]
 lto = true
+debug = true
 
 [[bin]]
 name = "day1"
