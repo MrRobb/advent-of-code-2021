@@ -32,6 +32,14 @@
 
 > The benchmarks are measured (non-scientifically) with [cargo-criterion](https://github.com/bheisler/cargo-criterion) on a Macbook Pro 13' M1.
 
+### Benchmark all
+
+```sh
+Benchmark 1: ./target/release/advent-of-code-2021
+  Time (mean ± σ):      12.6 ms ±   0.4 ms    [User: 45.9 ms, System: 3.0 ms]
+  Range (min … max):    12.1 ms …  14.5 ms    200 runs
+```
+
 ## Install Rust
 
 If you don't have Rust installed ([how dare you](https://media.giphy.com/media/U1aN4HTfJ2SmgB2BBK/giphy.gif)) just run this:

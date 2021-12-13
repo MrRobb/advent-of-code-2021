@@ -20,7 +20,8 @@ name = "benches"
 harness = false
 
 [profile.release]
-lto = true
+lto = "fat"
+codegen-units = 1
 debug = true
 
 [[bin]]
