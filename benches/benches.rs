@@ -7,6 +7,7 @@ use advent_of_code_2021::day12::{calculate_paths, calculate_paths_repeating};
 use advent_of_code_2021::day13::{calculate_all_folds, calculate_one_fold};
 use advent_of_code_2021::day14::calculate_frequencies;
 use advent_of_code_2021::day15::{calculate_path_cost, calculate_path_cost_5x};
+use advent_of_code_2021::day16::{calculate_eval_expression, calculate_sum_versions};
 use advent_of_code_2021::day2::{calculate_depth_position, calculate_depth_position_aim};
 use advent_of_code_2021::day3::{calculate_oxygen_co2, calculate_power_consumption};
 use advent_of_code_2021::day4::{calculate_first_winner, calculate_last_winner};
@@ -33,6 +34,7 @@ fn bench1(c: &mut Criterion) {
 	let input13 = read_to_string("input/day13/input.txt").expect("Input file not found");
 	let input14 = read_to_string("input/day14/input.txt").expect("Input file not found");
 	let input15 = read_to_string("input/day15/input.txt").expect("Input file not found");
+	let input16 = read_to_string("input/day16/input.txt").expect("Input file not found");
 
 	c.bench_function("Day 1 | Part 1", |b| b.iter(|| calculate_increases(&input01)));
 	c.bench_function("Day 1 | Part 2", |b| b.iter(|| calculate_with_sliding_window(&input01)));
@@ -78,6 +80,9 @@ fn bench1(c: &mut Criterion) {
 
 	c.bench_function("Day 15 | Part 1", |b| b.iter(|| calculate_path_cost(&input15)));
 	c.bench_function("Day 15 | Part 2", |b| b.iter(|| calculate_path_cost_5x(&input15)));
+
+	c.bench_function("Day 16 | Part 1", |b| b.iter(|| calculate_sum_versions(&input16)));
+	c.bench_function("Day 16 | Part 2", |b| b.iter(|| calculate_eval_expression(&input16)));
 }
 
 // fn bench2(c: &mut Criterion) {

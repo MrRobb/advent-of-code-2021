@@ -12,6 +12,8 @@ scan_fmt = "0.2"
 rayon = "1.5"
 regex = "1.5"
 pathfinding = "3.0"
+hex = "0.4"
+bitvec = "0.22.3"
 
 [dev-dependencies]
 criterion = "0.3"
@@ -84,3 +86,7 @@ path = "src/day14.rs"
 [[bin]]
 name = "day15"
 path = "src/day15.rs"
+
+[[bin]]
+name = "day16"
+path = "src/day16.rs"
