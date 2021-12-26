@@ -1,7 +1,7 @@
 #![allow(clippy::must_use_candidate, clippy::missing_panics_doc)]
 
 use advent_of_code_2021::{
-	day1, day10, day11, day12, day13, day14, day15, day16, day17, day2, day21, day3, day4, day5, day6, day7, day8, day9,
+	day1, day10, day11, day12, day13, day14, day15, day16, day17, day2, day21, day3, day4, day5, day6, day7, day8, day9, day22,
 };
 
 fn main() {
@@ -24,6 +24,7 @@ fn main() {
 		day16::main,
 		day17::main,
 		day21::main,
+		day22::main,
 	];
 
 	let now = std::time::Instant::now();

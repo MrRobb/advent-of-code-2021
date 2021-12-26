@@ -24,8 +24,8 @@
 | Day 18 |                                                    |                                                                                  |                       |          |
 | Day 19 |                                                    |                                                                                  |                       |          |
 | Day 20 |                                                    |                                                                                  |                       |          |
-| Day 21 |                                                    |                                                                                  |                       |          |
-| Day 22 |                                                    |                                                                                  |                       |          |
+| Day 21 | [Problem 21](https://adventofcode.com/2021/day/21) | [day21.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day21.rs) | 9.5767 μs + 401.30 ns | ✓        |
+| Day 22 | [Problem 22](https://adventofcode.com/2021/day/22) | [day22.rs](https://github.com/MrRobb/advent-of-code-2021/blob/main/src/day22.rs) | 404.58 ms + 54.421 ms | ✓        |
 | Day 23 |                                                    |                                                                                  |                       |          |
 | Day 24 |                                                    |                                                                                  |                       |          |
 | Day 25 |                                                    |                                                                                  |                       |          |

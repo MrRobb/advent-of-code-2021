@@ -15,6 +15,7 @@ pathfinding = "3.0"
 hex = "0.4"
 bitvec = "0.22.3"
 cached = "0.26.2"
+euclid = "0.22"
 
 [dev-dependencies]
 criterion = "0.3"
@@ -99,4 +100,7 @@ path = "src/day17.rs"
 [[bin]]
 name = "day21"
 path = "src/day21.rs"
-
+
+[[bin]]
+name = "day22"
+path = "src/day22.rs"
